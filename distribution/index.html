@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather 360</title>
+</head>
+
+<body class="bg-cover bg-center h-screen" style="background-image: url('../src/images/few.jpg')">
+    <!-- Navbar Start Here -->
+    <navbar class="w-full h-4xl fixed backdrop-blur">
+        <div class="my-3 mx-3 flex items-center border-b-2 border-slate-700">
+            <div class="my-4 mx-3 text-3xl font-bold fixed">
+                Weather 360
+            </div>
+            <div class="relative ml-auto">
+                <label for="Search" class="sr-only">Search</label>
+                <input type="text" id="Search" placeholder="Search for..."
+                    class="w-full rounded-md bg-gray-100 bg-opacity-60 border border-gray-300 py-2.5 pe-10 shadow-sm sm:text-sm" />
+                <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
+                    <button type="button" class="text-gray-600 hover:text-gray-700">
+                        <span class="sr-only">Search</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </navbar>
+    <!-- Navbar End Here -->
+
+    <!-- Weather Data Start Here -->
+    <div>
+        <div class="h-screen flex flex-col md:flex-row border-2 border-green-700">
+            <div class="mx-6 my-[28rem] flex  border-2 border-purple-500">
+                <div class="mr-[3rem] text-[6rem] font-medium p-8 border-2 border-yellow-500">
+                    16&deg;
+                </div>
+                <div class="mr-[6rem] border-2 border-purple-500">
+                    <div class="text-6xl font-semibold">Patna</div>
+                    <div class="flex">
+                        <div>19:00</div>
+                        <div>Wednesday</div>
+                        <div>12/20/2023</div>
+                    </div>
+                </div>
+                <!-- <div class="mr-[6rem] border-2 border-purple-500">
+                        <div>Icon</div>
+                        <div>Partly cloudy</div>
+                    </div> -->
+            </div>
+
+        </div>
+
+        <div class="w-full h-screen border-2 border-red-700 md:w-[35%] ">
+            <div>
+                <div>Weather Details</div>
+                <div>
+                    Sunrise : <p>6:30:37</p> AM
+                </div>
+                <div>
+                    Sunset : <p>5:02:59</p> PM
+                </div>
+                <div>
+                    Pressure : <p>1015</p> hPa
+                </div>
+                <div>
+                    Humidity : <p>43</p> %
+                </div>
+                <div>
+                    Wind Speed : <p>2.06</p> m/s
+                </div>
+                <div>
+                    Min-Max Temp : <p>24&deg;/24&deg;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Weather Data End Here -->
+</body>
+
+</html>
