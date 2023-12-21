@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="icon" type="image/x-icon" href="../src/images/icon.png">
     <!-- Font Links Start Here -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +23,7 @@
 </head>
 
 
-<body class="bg-cover bg-center h-screen" style="background-image: url('../src/images/r.jpg')">
+<body class="bg-cover bg-center h-screen" style="background-image: url('../src/images/thdr.jpg')">
     <!-- Font Styles -->
     <style>
         .font-rubik {
@@ -45,11 +46,11 @@
                 weather360
             </div>
             <div class="relative ml-auto flex items-center">
-                <label for="Search" class="sr-only">Search</label>
-                <input type="text" id="Search" placeholder="Search for..."
+                <label for="Search" class="sr-only ">Search</label>
+                <input type="text" id="searchVal" placeholder="Search for..."
                     class="w-48 text-white rounded-md bg-gray-100 bg-opacity-30 border border-gray-300 py-2.5 pe-10 shadow-sm sm:text-sm" />
                 <span class="absolute inset-y-0 end-0 grid w-10 place-content-center">
-                    <button type="button" class="text-white hover:text-gray-700">
+                    <button id="btn" type="button" class="text-white hover:text-gray-700">
                         <span class="sr-only">Search</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="h-4 w-4">
@@ -65,24 +66,32 @@
 
     <!-- Weather Data Start Here -->
     <div class="w-full h-auto flex flex-col md:flex-row">
-        <div class="h-[29rem]  md:w-[65%] md:h-screen ">
+        <div class="h-[29rem] md:w-[65%] md:h-screen ">
             <div class="mt-[10rem] flex justify-around md:mt-[31rem] md:justify-normal">
-                <div class="pl-4 text-[6rem] font-medium font-popins md:px-3 text-white md:pl-[3rem]">
-                    16&deg;
+                <div id="temp" class="pl-4 text-[6rem] font-medium font-popins text-white md:pl-[3rem] pr-0 ">
+                    16
                 </div>
-                <div class="">
-                    <div class="px-4 pt-7 text-6xl font-semibold text-center text-white font-popins">Patna</div>
-                    <div class="flex justify-around text-center text-[0.9rem] p-1">
-                        <div class="text-[1.2rem] text-white font-popins">19:00</div>
-                        <div class="text-[1.2rem]  text-white font-popins">Wednesday</div>
+                <span class="text-[2rem] font-bold pt-[1.6rem] font-popins text-red-400 ">
+                    °C
+                </span>
+                <div class="w-auto ">
+                    <div id="city"
+                        class="px-4 pt-7 text-3xl md:text-6xl font-semibold text-center text-white font-popins">
+                        Hyderabad
+                    </div>
+                    <div class="flex flex-col justify-evenly  text-[0.9rem] p-1 pl-4 ">
+                        <div id="curDay" class="text-[1.2rem] text-white font-popins">Wednesday</div>
+                        <div id="time" class="text-[1.2rem] text-white font-popins">19:00</div>
                         <!-- <div>12/20/2023</div> -->
                     </div>
                 </div>
                 <div class="px-2 pt-5 md:pt-0 ">
-                    <div class="p">
+                    <div id="icon" class="p">
                         <img src="../src/final/haze.svg" alt="">
                     </div>
-                    <div class="font-bold text-[0.9rem] pt-2 text-center text-white font-popins">Partly cloudy</div>
+                    <div id="type" class="font-bold text-[0.9rem] pt-2 text-center text-white font-popins">
+                        Partly cloudy
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,38 +103,40 @@
                 <div class="px-8 mt-2 font-raleway">
                     <div class="py-3 flex w-15">
                         <p class="text-[1.2rem] font-semibold text-white ">Sunrise : </p>
-                        <p class="px-2 text-[1rem]  pt-1 text-white font-medium ">6:30:37</p>
+                        <p id="sunR" class="px-2 text-[1rem]  pt-1 text-white font-medium font-popins ">6:30:37</p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">AM</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Sunset : </p>
-                        <p class="px-2 text-[1rem]  pt-1 text-white font-medium ">5:02:59</p>
+                        <p id="sunS" class="px-2 text-[1rem]  pt-1 text-white font-medium font-popins ">5:02:59</p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">PM</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Pressure : </p>
-                        <p class="px-2 text-[1rem] font-medium pt-1 text-white">1015</p>
+                        <p id="pressure" class="px-2 text-[1rem] font-medium pt-1 text-white font-popins">1015</p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">hPa</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Humidity : </p>
-                        <p class="px-2 text-[1rem] font-medium  pt-1 text-white">43</p>
+                        <p id="humidity" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">43</p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">%</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Visibility : </p>
-                        <p class="px-2 text-[1rem] font-medium  pt-1 text-white">10000</p>
-                        <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">m</p>
+                        <p id="visible" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">10000</p>
+                        <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">Km</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Wind Speed : </p>
-                        <p class="px-2 text-[1rem] font-medium  pt-1 text-white">2.06</p>
+                        <p id="windSpeed" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">2.06</p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">m/s</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Min-Max Temp : </p>
-                        <p class="px-2 text-[1rem] font-medium  pt-1 text-white">24&deg;/24&deg;</p>
-                        <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">C</p>
+                        <p id="minTemp" class="pl-2 text-[1rem] font-medium  pt-1 text-white font-popins">24&deg;</p>
+                        <p class="text-[1rem] font-medium  pt-1 text-white">/</p>
+                        <p id="maxTemp" class="text-[1rem] font-medium  pt-1 text-white font-popins">24&deg;</p>
+                        <p class="pl-2 text-[1.1rem] font-semibold pt-[0.2rem] text-white">C</p>
                     </div>
                     <div class=" md:w-[28rem] md:pl-[15rem] md:mt-[3rem] ">
                         <img class="hidden md:block md:animate-pulse" src="../src/images/clouds.png" width="200px"
@@ -136,6 +147,8 @@
         </div>
     </div>
     <!-- Weather Data End Here -->
+
+    <script src="../script.js"></script>
 </body>
 
 </html>
