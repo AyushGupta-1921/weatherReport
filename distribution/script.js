@@ -2,7 +2,7 @@ let p = "https://openweathermap.org/img/wn/";
 let e = "@2x.png";
 let startURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 let endURL = "&appid=8fdf9da40d68e700534ecbae7604637d&units=metric";
-let cityName = "Mumbai";
+let cityName = "Patna";
 
 const months = [
   "Jan",
@@ -63,6 +63,7 @@ function sunSet(suns) {
 let temp = document.getElementById("temp");
 let city = document.getElementById("city");
 let type = document.getElementById("type");
+let weatherIcon = document.getElementById("weatherIcon");
 let pressure = document.getElementById("pressure");
 let humidity = document.getElementById("humidity");
 let visible = document.getElementById("visible");
@@ -87,7 +88,7 @@ const getData = async (cityName) => {
     temp.innerHTML = Math.round(data.main.temp);
     city.innerHTML = data.name;
     type.innerHTML = data.weather[0].main;
-    icon.src = p + data.weather[0].icon + e;
+    // weatherIcon.src = p + data.weather[0].icon + e;
     pressure.innerHTML = data.main.pressure;
     humidity.innerHTML = data.main.humidity;
     visible.innerHTML = data.visibility / 1000;
@@ -104,6 +105,90 @@ const getData = async (cityName) => {
     var suns = data.sys.sunset + tz - 19800;
     sunR.innerHTML = sunRise(sunr);
     sunS.innerHTML = sunSet(suns);
+
+    // Weather Icon and Background Image //
+    if (data.weather[0].main === "Mist") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/mist2.jpg')";
+      weatherIcon.src = "../distribution/src/final/mist.svg";
+    } else if (data.weather[0].main === "Thunderstorm") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/thdr2.jpg')";
+      weatherIcon.src = "../distribution/src/final/thunderstorms-day.svg";
+    } else if (data.weather[0].main === "Clear") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/clearSky2.jpg')";
+      weatherIcon.src = "../distribution/src/final/clear-day.svg";
+    } else if (data.weather[0].main === "Scattered Clouds") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/scatteredClouds.jpg')";
+      weatherIcon.src = "../distribution/src/final/overcast.svg";
+    } else if (data.weather[0].main === "Clouds") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/clouds5.jpg')";
+      weatherIcon.src = "../distribution/src/final/overcast.svg";
+    } else if (data.weather[0].main === "Rain") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/rain.jpg')";
+      weatherIcon.src =
+        "../distribution/src/final/partly-cloudy-night-rain.svg";
+    } else if (data.weather[0].main === "Broken Clouds") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/brokenClouds.jpg')";
+      weatherIcon.src = "../distribution/src/final/overcast-day.svg";
+    } else if (data.weather[0].main === "Snow") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/snow.jpg')";
+      weatherIcon.src = "../distribution/src/final/snow.svg";
+    } else if (data.weather[0].main === "Few Clouds") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/few.jpg')";
+      weatherIcon.src = "../distribution/src/final/cloudy.svg";
+    } else if (data.weather[0].main === "Shower Rain") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/showerRain.jpg')";
+      weatherIcon.src = "../distribution/src/final/partly-cloudy-day-rain.svg";
+    } else if (data.weather[0].main === "Drizzle") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/drizzle.jpg')";
+      weatherIcon.src = "../distribution/src/final/drizzle.svg";
+    } else if (data.weather[0].main === "Smoke") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/smoke.jpg')";
+      weatherIcon.src = "../distribution/src/final/smoke.svg";
+    } else if (data.weather[0].main === "Haze") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/haze3.jpg')";
+      weatherIcon.src = "../distribution/src/final/haze.svg";
+    } else if (data.weather[0].main === "Dust") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/dust.jpg')";
+      weatherIcon.src = "../distribution/src/final/dust-wind.svg";
+    } else if (data.weather[0].main === "Fog") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/fog2.jpg')";
+      weatherIcon.src = "../distribution/src/final/fog.svg";
+    } else if (data.weather[0].main === "Sand") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/sand.jpg')";
+      weatherIcon.src = "../distribution/src/final/wind-beaufort-8.svg";
+    } else if (data.weather[0].main === "Ash") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/ash.jpg')";
+      weatherIcon.src = "../distribution/src/final/wind-beaufort-9.svg";
+    } else if (data.weather[0].main === "Squall") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/squall.jpg')";
+      weatherIcon.src = "../distribution/src/final/hurricane.svg";
+    } else if (data.weather[0].main === "Tornado") {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/tornado.jpg')";
+      weatherIcon.src = "../distribution/src/final/tornado.svg";
+    } else {
+      document.body.style.backgroundImage =
+        "url('../../distribution/src/images/r2.jpg')";
+      weatherIcon.src = "../distribution/src/final/mist.svg";
+    }
   }
 };
 

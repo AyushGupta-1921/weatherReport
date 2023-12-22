@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="bg-cover bg-center h-screen" style="background-image: url('../distribution/src/images/thdr2.jpg')">
+<body class="bg-cover bg-center h-screen" style="background-image: url('../distribution/src/images/fog2.jpg')">
     <!-- Font Styles -->
     <style>
         .font-rubik {
@@ -69,73 +69,100 @@
         <div class="h-[29rem] md:w-[65%] md:h-screen ">
             <div class="mt-[10rem] flex justify-around md:mt-[31rem] md:justify-normal">
                 <div id="temp" class="pl-4 text-[6rem] font-medium font-popins text-white md:pl-[3rem] pr-0 ">
-                    16
+                    <!-- 16 -->
                 </div>
                 <span class="text-[2rem] font-bold pt-[1.6rem] font-popins text-red-400 ">
                     °C
                 </span>
                 <div class="w-auto ">
                     <div id="city"
-                        class="px-4 pt-7 text-3xl md:text-6xl font-semibold text-center text-white font-popins">
-                        Hyderabad
+                        class="px-3 pt-7 text-3xl md:text-6xl font-semibold text-center text-white font-popins">
+                        <!-- Hyderabad -->
                     </div>
                     <div class="flex flex-col justify-evenly  text-[0.9rem] p-1 pl-4 ">
-                        <div id="curDay" class="text-[1.2rem] text-white font-popins">Wednesday</div>
-                        <div id="time" class="text-[1.2rem] text-white font-popins">19:00</div>
+                        <div id="curDay" class="text-[1.2rem] text-white font-popins">
+                            <!-- Wednesday -->
+                        </div>
+                        <div id="time" class="text-[1.2rem] text-white font-popins">
+                            <!-- 19:00 -->
+                        </div>
                         <!-- <div>12/20/2023</div> -->
                     </div>
                 </div>
-                <div class="px-2 pt-5 md:pt-0 ">
-                    <div id="icon" class="p">
-                        <img src="../distribution/src/final/haze.svg" alt="">
+                <div class="w-[5rem] md:pt-0 md:w-[6rem] ">
+                    <div class="pt-3 w-full md:pt-0">
+                        <img id="weatherIcon" src="" alt="">
                     </div>
-                    <div id="type" class="font-bold text-[0.9rem] pt-2 text-center text-white font-popins">
-                        Partly cloudy
+                    <div id="type"
+                        class="font-bold text-[1rem] pt-2 text-center text-white font-popins md:pt-2 md:text-lg">
+                        <!-- Partly cloudy -->
                     </div>
                 </div>
             </div>
         </div>
 
         <div
-            class="w-full h-auto backdrop-filter backdrop-blur-md shadow-2xl md:w-[35%] md:mt-[3.77rem] md:shadow-2xl shadow-black">
+            class="w-full h-auto bg-slate-800 bg-opacity-15 backdrop-filter backdrop-blur-[8px] shadow-2xl md:w-[35%] md:mt-[3.77rem] md:shadow-2xl shadow-black">
             <div>
                 <div class="text-3xl font-bold text-center py-2 font-raleway text-white md:mt-6">Weather Details</div>
                 <div class="px-8 mt-2 font-raleway">
                     <div class="py-3 flex w-15">
-                        <p class="text-[1.2rem] font-semibold text-white ">Sunrise : </p>
-                        <p id="sunR" class="px-2 text-[1rem]  pt-1 text-white font-medium font-popins ">6:30:37</p>
-                        <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">AM</p>
+                        <p class="text-[1.2rem] font-semibold text-white ">
+                            Sunrise :
+                        </p>
+                        <p id="sunR" class="px-2 text-[1rem]  pt-1 text-white font-medium font-popins ">
+                            <!-- 6:30:37 -->
+                        </p>
+                        <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">
+                            AM
+                        </p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Sunset : </p>
-                        <p id="sunS" class="px-2 text-[1rem]  pt-1 text-white font-medium font-popins ">5:02:59</p>
+                        <p id="sunS" class="px-2 text-[1rem]  pt-1 text-white font-medium font-popins ">
+                            <!-- 5:02:59 -->
+                        </p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">PM</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Pressure : </p>
-                        <p id="pressure" class="px-2 text-[1rem] font-medium pt-1 text-white font-popins">1015</p>
+                        <p id="pressure" class="px-2 text-[1rem] font-medium pt-1 text-white font-popins">
+                            <!-- 1015 -->
+                        </p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">hPa</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Humidity : </p>
-                        <p id="humidity" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">43</p>
+                        <p id="humidity" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">
+                            <!-- 43 -->
+                        </p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">%</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Visibility : </p>
-                        <p id="visible" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">10000</p>
+                        <p id="visible" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">
+                            <!-- 10000 -->
+                        </p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">Km</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Wind Speed : </p>
-                        <p id="windSpeed" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">2.06</p>
+                        <p id="windSpeed" class="px-2 text-[1rem] font-medium  pt-1 text-white font-popins">
+                            <!-- 2.06 -->
+                        </p>
                         <p class="text-[1.1rem] font-semibold pt-[0.2rem] text-white">m/s</p>
                     </div>
                     <div class="py-3 flex w-50">
                         <p class="text-[1.2rem] font-semibold text-white">Min-Max Temp : </p>
-                        <p id="minTemp" class="pl-2 text-[1rem] font-medium  pt-1 text-white font-popins">24&deg;</p>
+                        <p id="minTemp" class="pl-2 text-[1rem] font-medium  pt-1 text-white font-popins">
+                            <!-- 24 -->
+                            &deg;
+                        </p>
                         <p class="text-[1rem] font-medium  pt-1 text-white">/</p>
-                        <p id="maxTemp" class="text-[1rem] font-medium  pt-1 text-white font-popins">24&deg;</p>
+                        <p id="maxTemp" class="text-[1rem] font-medium  pt-1 text-white font-popins">
+                            <!-- 24 -->
+                            &deg;
+                        </p>
                         <p class="pl-2 text-[1.1rem] font-semibold pt-[0.2rem] text-white">C</p>
                     </div>
                     <div class=" md:w-[28rem] md:pl-[15rem] md:mt-[3rem] ">
